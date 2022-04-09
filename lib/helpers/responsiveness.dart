@@ -19,8 +19,8 @@ class ResponsiveWidget extends StatelessWidget {
   // ignore: use_key_in_widget_constructors
    ResponsiveWidget({
     
-    required this.largeScreen,
-    required this.smallScreen,
+      required this.largeScreen,
+     required this.smallScreen,
   });
 
   static bool isSmallScreen(BuildContext context) {
@@ -49,11 +49,11 @@ class ResponsiveWidget extends StatelessWidget {
         double _width = constraints.maxWidth;
         if (_width >= largeScreenSize) {
           return largeScreen;
-        } else if (_width < largeScreenSize &&
-            _width >= mediumScreenSize) {
-          return mediumScreen ?? largeScreen;
+        // } else if (_width < largeScreenSize &&
+        //     _width >= mediumScreenSize) {
+        //   return mediumScreen ;
         } else {
-          return smallScreen ?? largeScreen;
+          return smallScreen ;
         }
       },
     );
