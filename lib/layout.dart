@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter_youtube/widgets/side_menu.dart';
 
 import 'helpers/responsiveness.dart';
 import 'widgets/large_screen.dart';
@@ -9,11 +10,11 @@ class SiteLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key:scaffoldKey,
       appBar:topNavigationBar(context,scaffoldKey),
-      //  appBar:AppBar(
-      //   elevation:0,
-      //   backgroundColor:Colors.white
-      // ),
+      drawer: Drawer(
+        child: SideMenu(),
+      ),
       body:ResponsiveWidget(largeScreen: LargeScreen(),smallScreen: SmallScreen())
       
     );
